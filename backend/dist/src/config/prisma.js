@@ -1,0 +1,10 @@
+import { PrismaClient } from '@prisma/client';
+import { config } from './index.js';
+export const prisma = global.prisma ||
+    new PrismaClient({
+        log: config.env === 'development' ? ['query', 'error', 'warn'] : ['error'],
+    });
+if (config.env !== 'production') {
+    global.prisma = prisma;
+}
+export default prisma;
