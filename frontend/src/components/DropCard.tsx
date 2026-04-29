@@ -1,14 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Drop, StockUpdate, NewPurchase } from '@/types/index';
 import { useSocket } from '@/providers/socket-provider';
 import { useAuth } from '@/providers/auth-provider';
 import { toast } from 'sonner';
-import { Users, Timer, ShoppingCart } from 'lucide-react';
+import { Users, Timer, ShoppingBag, Zap, ChevronRight } from 'lucide-react';
 import api from '@/lib/api';
 import Link from 'next/link';
 
@@ -36,9 +36,9 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
 
     const handleNewPurchase = (data: NewPurchase) => {
       if (data.dropId === drop.id) {
-        // Optimistically update purchasers list if needed, 
-        // or just show a toast for feedback
-        toast.info(`New purchase success: ${data.userName}`);
+        toast.info(`New purchase: ${data.userName}`, {
+          icon: <ShoppingBag className="w-3.5 h-3.5 text-primary" />,
+        });
       }
     };
 
@@ -77,7 +77,7 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
       });
       setReservation(response.data.data);
       setTimeLeft(60);
-      toast.success('Reserved! You have 60 seconds to checkout.');
+      toast.success('Spot secured!');
     } catch (err: any) {
       toast.error(err.response?.data?.message || 'Failed to reserve');
     } finally {
@@ -95,7 +95,7 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
       });
       setReservation(null);
       setTimeLeft(0);
-      toast.success('Purchase successful! Thank you.');
+      toast.success('Confirmed!');
     } catch (err: any) {
       toast.error(err.response?.data?.message || 'Purchase failed');
     } finally {
@@ -103,91 +103,126 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
     }
   };
 
+  const stockPercentage = (drop.availableStock / drop.totalStock) * 100;
+  const isLowStock = drop.availableStock < 10 && drop.availableStock > 0;
+
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg">
-      <CardHeader className="bg-muted/50">
-        <div className="flex justify-between items-start">
-          <div>
-            <CardTitle className="text-xl font-bold">{drop.name}</CardTitle>
-            <p className="text-sm text-muted-foreground mt-1">{drop.description || 'Exclusive Sneaker Drop'}</p>
-          </div>
-          <Badge variant={drop.availableStock > 0 ? "default" : "destructive"} className="px-3 py-1">
+    <Card className="group relative overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-md">
+      {/* Visual Area */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-muted/40">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/10 to-transparent z-10" />
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
+          <Zap className="w-16 h-16 text-primary scale-90 group-hover:scale-100 transition-transform duration-500" />
+        </div>
+        
+        {/* Floating Badges */}
+        <div className="absolute top-3 left-3 z-20">
+          <Badge className="bg-background/90 text-foreground backdrop-blur-md border-none shadow-xs px-2 py-0.5 text-[9px] font-bold">
             ${drop.price}
           </Badge>
         </div>
-      </CardHeader>
-      <CardContent className="pt-6 space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-sm font-medium">
-            <ShoppingCart className="w-4 h-4 text-primary" />
-            <span>Available Stock</span>
+        
+        {isLowStock && (
+          <div className="absolute top-3 right-3 z-20">
+            <Badge variant="destructive" className="animate-pulse shadow-sm px-2 py-0.5 text-[9px] font-bold border-none uppercase">
+              Low
+            </Badge>
           </div>
-          <span className={`text-2xl font-bold ${drop.availableStock < 10 ? 'text-destructive animate-pulse' : ''}`}>
-            {drop.availableStock}
-          </span>
+        )}
+
+        {reservation && (
+          <div className="absolute inset-0 z-30 bg-primary/90 backdrop-blur-sm flex flex-col items-center justify-center text-primary-foreground p-4 animate-in fade-in duration-200">
+            <Timer className="w-6 h-6 mb-2 animate-pulse" />
+            <h4 className="text-sm font-black uppercase mb-0.5">Secured</h4>
+            <p className="text-[9px] opacity-80 mb-4 uppercase">{timeLeft}s</p>
+            <Button 
+              className="w-full bg-white text-primary hover:bg-white/90 rounded-lg font-bold h-9 text-[10px] uppercase shadow-lg" 
+              onClick={handlePurchase}
+              disabled={isPurchasing}
+            >
+              {isPurchasing ? '...' : 'Checkout'}
+            </Button>
+          </div>
+        )}
+      </div>
+
+      <CardContent className="p-4 space-y-4">
+        <div className="space-y-1">
+          <h3 className="text-base font-bold tracking-tight text-foreground/90 group-hover:text-primary transition-colors line-clamp-1">
+            {drop.name}
+          </h3>
+          <p className="text-[11px] text-muted-foreground leading-snug line-clamp-2">
+            {drop.description || 'Premium limited edition release with exceptional design.'}
+          </p>
         </div>
 
-        {/* Activity Feed */}
-        <div className="space-y-2 pt-2 border-t">
-          <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            <Users className="w-3 h-3" />
-            <span>Recent Purchasers</span>
+        {/* Stock Status */}
+        <div className="space-y-1.5">
+          <div className="flex justify-between items-end">
+            <span className="text-[8px] font-bold text-muted-foreground uppercase tracking-widest">
+              Stock
+            </span>
+            <span className={`text-[9px] font-black ${isLowStock ? 'text-destructive' : 'text-primary'}`}>
+              {drop.availableStock}/{drop.totalStock}
+            </span>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {drop.purchases && drop.purchases.length > 0 ? (
-              drop.purchases.slice(0, 3).map((p, i) => (
-                <Badge key={i} variant="secondary" className="text-[10px] font-normal">
-                  {p.user.name}
-                </Badge>
-              ))
-            ) : (
-              <span className="text-xs text-muted-foreground italic">No purchases yet</span>
-            )}
+          <div className="relative h-1 w-full bg-muted rounded-full overflow-hidden">
+            <div 
+              className={`absolute top-0 left-0 h-full transition-all duration-1000 ease-out rounded-full ${isLowStock ? 'bg-destructive' : 'bg-primary'}`}
+              style={{ width: `${stockPercentage}%` }}
+            />
           </div>
+        </div>
+
+        {/* Community Proof */}
+        <div className="flex items-center justify-between pt-0.5">
+           <div className="flex items-center gap-1.5">
+              <div className="flex -space-x-1.5">
+                {[1, 2].map((i) => (
+                  <div key={i} className="h-5 w-5 rounded-full border border-background bg-muted flex items-center justify-center">
+                    <Users className="w-2 h-2 text-muted-foreground" />
+                  </div>
+                ))}
+              </div>
+              <span className="text-[9px] font-semibold text-muted-foreground">
+                {drop.purchases?.length || 0}+ secured
+              </span>
+           </div>
         </div>
       </CardContent>
-      <CardFooter className="bg-muted/30 border-t flex flex-col gap-3">
-        <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
-          <Timer className="w-3 h-3" />
-          <span>Next Drop: {new Date(drop.startTime).toLocaleString()}</span>
-        </div>
-        {reservation ? (
-          <div className="w-full space-y-3">
-            <div className="flex items-center justify-between text-xs font-bold text-orange-500 animate-pulse">
-              <span>RESERVATION ACTIVE</span>
-              <span>{timeLeft}s remaining</span>
-            </div>
+
+      <CardFooter className="p-4 pt-0">
+        {!reservation && (
+          user ? (
             <Button 
-              className="w-full font-bold bg-orange-600 hover:bg-orange-700" 
-              size="lg"
-              disabled={isPurchasing}
-              onClick={handlePurchase}
+              className={`w-full rounded-lg h-9 font-bold transition-all uppercase text-[9px] ${drop.availableStock <= 0 ? 'bg-muted' : 'bg-primary hover:bg-primary/90'}`} 
+              disabled={drop.availableStock <= 0 || isReserving}
+              onClick={handleReserve}
             >
-              {isPurchasing ? 'PROCESSING...' : 'COMPLETE PURCHASE'}
+              {drop.availableStock <= 0 ? 'Sold Out' : isReserving ? '...' : 'Reserve Spot'}
             </Button>
-          </div>
-        ) : user ? (
-          <Button 
-            className="w-full font-bold transition-all" 
-            size="lg"
-            disabled={drop.availableStock <= 0 || isReserving}
-            onClick={handleReserve}
-          >
-            {drop.availableStock <= 0 ? 'SOLD OUT' : isReserving ? 'RESERVING...' : 'RESERVE NOW'}
-          </Button>
-        ) : (
-          <Link href="/login" className="w-full">
-            <Button 
-              className="w-full font-bold transition-all" 
-              variant="outline"
-              size="lg"
-              disabled={drop.availableStock <= 0}
-            >
-              {drop.availableStock <= 0 ? 'SOLD OUT' : 'LOGIN TO RESERVE'}
-            </Button>
-          </Link>
+          ) : (
+            <Link href="/login" className="w-full">
+              <Button 
+                className="w-full rounded-lg h-9 font-bold transition-all uppercase text-[9px] group/btn" 
+                variant="outline"
+                disabled={drop.availableStock <= 0}
+              >
+                {drop.availableStock <= 0 ? 'Sold Out' : (
+                  <span className="flex items-center gap-1">
+                    Login
+                    <ChevronRight className="w-2.5 h-2.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                  </span>
+                )}
+              </Button>
+            </Link>
+          )
         )}
       </CardFooter>
     </Card>
   );
 }
+
+
+
+

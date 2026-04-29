@@ -131,3 +131,29 @@
 2026-04-29 20:58:27 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 1087.524 ms - -[0m
 2026-04-29 20:58:30 info: 	[0mGET /api/v1/drops [32m200[0m 987.109 ms - -[0m
 2026-04-29 20:58:39 info: 	Recovered 1 expired reservations
+2026-04-29 21:00:13 info: 	User disconnected: erysvRS0SHoE0hMDAAAD
+2026-04-29 21:00:18 info: 	User disconnected: ULJnLTTxZ1tLg3czAAAF
+2026-04-29 21:00:25 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-30 00:11:31 info: 	Connected to PostgreSQL database via Prisma
+2026-04-30 00:11:31 info: 	Server is running on port 5001 in development mode
+2026-04-30 00:11:35 info: 	User connected: e_yXcBG0ymTH5JAfAAAB
+2026-04-30 00:11:35 warn: 	401 - Invalid token. Please log in again. - /api/v1/auth/me - GET - ::1
+2026-04-30 00:11:35 info: 	[0mGET /api/v1/auth/me [33m401[0m 26.329 ms - -[0m
+2026-04-30 00:11:39 info: 	[0mGET /api/v1/drops [0m-[0m - ms - -[0m
+2026-04-30 00:11:39 info: 	User disconnected: e_yXcBG0ymTH5JAfAAAB
+2026-04-30 00:11:39 info: 	User connected: YKwowoaTsWjvoP2IAAAD
+2026-04-30 00:11:42 info: 	[0mGET /api/v1/drops [32m200[0m 3425.345 ms - -[0m
+2026-04-30 00:12:00 info: 	User disconnected: YKwowoaTsWjvoP2IAAAD
+2026-04-30 00:12:00 info: 	User connected: foCV_YDKIhtoUG4eAAAF
+2026-04-30 00:12:01 info: 	[0mGET /api/v1/drops [36m304[0m 914.705 ms - -[0m
+2026-04-30 00:12:02 info: 	User disconnected: foCV_YDKIhtoUG4eAAAF
+2026-04-30 00:12:02 info: 	User connected: _-_x289DZ_hW8CrlAAAH
+2026-04-30 00:12:03 info: 	[0mGET /api/v1/drops [36m304[0m 913.677 ms - -[0m
+2026-04-30 00:12:15 info: 	User disconnected: _-_x289DZ_hW8CrlAAAH
+2026-04-30 00:12:15 info: 	User connected: -1D99zejguZFSWJ2AAAJ
+2026-04-30 00:12:16 info: 	[0mGET /api/v1/drops [36m304[0m 918.846 ms - -[0m
+2026-04-30 00:12:31 info: 	[0mGET /api/v1/drops [36m304[0m 918.006 ms - -[0m
+2026-04-30 00:13:53 info: 	[0mGET /api/v1/drops [36m304[0m 911.488 ms - -[0m
+2026-04-30 00:16:22 info: 	[0mGET /api/v1/drops [36m304[0m 939.033 ms - -[0m
+2026-04-30 00:32:10 info: 	User disconnected: -1D99zejguZFSWJ2AAAJ
+2026-04-30 00:32:11 info: 	User connected: cLZCXt9XRasxzDJ2AAAL
