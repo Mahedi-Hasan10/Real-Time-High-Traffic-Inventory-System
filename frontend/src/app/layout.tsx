@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "@/providers/query-provider";
 import { SocketProvider } from "@/providers/socket-provider";
+import { AuthProvider } from "@/providers/auth-provider";
 import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,10 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <QueryProvider>
-          <SocketProvider>
-            {children}
-            <Toaster position="top-right" />
-          </SocketProvider>
+          <AuthProvider>
+            <SocketProvider>
+              {children}
+              <Toaster position="top-right" richColors />
+            </SocketProvider>
+          </AuthProvider>
         </QueryProvider>
       </body>
     </html>

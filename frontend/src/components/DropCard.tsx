@@ -6,17 +6,19 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Drop, StockUpdate, NewPurchase } from '@/types/index';
 import { useSocket } from '@/providers/socket-provider';
+import { useAuth } from '@/providers/auth-provider';
 import { toast } from 'sonner';
 import { Users, Timer, ShoppingCart } from 'lucide-react';
 import api from '@/lib/api';
+import Link from 'next/link';
 
 interface DropCardProps {
   drop: Drop;
-  userId?: string;
 }
 
-export default function DropCard({ drop: initialDrop, userId }: DropCardProps) {
+export default function DropCard({ drop: initialDrop }: DropCardProps) {
   const [drop, setDrop] = useState<Drop>(initialDrop);
+  const { user } = useAuth();
   const { socket } = useSocket();
   const [isReserving, setIsReserving] = useState(false);
   const [reservation, setReservation] = useState<any>(null);
@@ -63,15 +65,15 @@ export default function DropCard({ drop: initialDrop, userId }: DropCardProps) {
   }, [timeLeft, reservation]);
 
   const handleReserve = async () => {
-    if (!userId) {
-      toast.error('Please wait for demo user to load');
+    if (!user) {
+      toast.error('Please login to reserve');
       return;
     }
     setIsReserving(true);
     try {
       const response = await api.post('/drops/reserve', {
         dropId: drop.id,
-        userId: userId,
+        userId: user.id,
       });
       setReservation(response.data.data);
       setTimeLeft(60);
@@ -89,7 +91,7 @@ export default function DropCard({ drop: initialDrop, userId }: DropCardProps) {
     try {
       await api.post('/drops/purchase', {
         reservationId: reservation.id,
-        userId: userId,
+        userId: user?.id,
       });
       setReservation(null);
       setTimeLeft(0);
@@ -164,7 +166,7 @@ export default function DropCard({ drop: initialDrop, userId }: DropCardProps) {
               {isPurchasing ? 'PROCESSING...' : 'COMPLETE PURCHASE'}
             </Button>
           </div>
-        ) : (
+        ) : user ? (
           <Button 
             className="w-full font-bold transition-all" 
             size="lg"
@@ -173,6 +175,17 @@ export default function DropCard({ drop: initialDrop, userId }: DropCardProps) {
           >
             {drop.availableStock <= 0 ? 'SOLD OUT' : isReserving ? 'RESERVING...' : 'RESERVE NOW'}
           </Button>
+        ) : (
+          <Link href="/login" className="w-full">
+            <Button 
+              className="w-full font-bold transition-all" 
+              variant="outline"
+              size="lg"
+              disabled={drop.availableStock <= 0}
+            >
+              {drop.availableStock <= 0 ? 'SOLD OUT' : 'LOGIN TO RESERVE'}
+            </Button>
+          </Link>
         )}
       </CardFooter>
     </Card>

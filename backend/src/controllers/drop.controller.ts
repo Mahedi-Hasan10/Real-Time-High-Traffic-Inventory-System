@@ -48,3 +48,26 @@ export const purchaseDrop = asyncHandler(async (req: Request, res: Response) => 
     new ApiResponse(200, purchase, 'Purchase completed successfully')
   );
 });
+
+/**
+ * @description Get all reservations for admin
+ */
+export const getAdminReservations = asyncHandler(async (req: Request, res: Response) => {
+  const reservations = await dropService.getReservations();
+  
+  res.status(200).json(
+    new ApiResponse(200, reservations, 'Reservations fetched successfully')
+  );
+});
+
+/**
+ * @description Get my reservations
+ */
+export const getMyReservations = asyncHandler(async (req: Request, res: Response) => {
+  const userId = (req as any).user.id;
+  const reservations = await dropService.getUserReservations(userId);
+  
+  res.status(200).json(
+    new ApiResponse(200, reservations, 'My reservations fetched successfully')
+  );
+});

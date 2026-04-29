@@ -187,3 +187,47 @@ export const recoverExpiredStock = async () => {
 
   return expiredReservations.length;
 };
+
+/**
+ * @description Get all reservations (Admin only)
+ */
+export const getReservations = async () => {
+  return prisma.reservation.findMany({
+    include: {
+      user: {
+        select: {
+          name: true,
+          email: true,
+        },
+      },
+      drop: {
+        select: {
+          name: true,
+        },
+      },
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+};
+
+/**
+ * @description Get reservations for a specific user
+ */
+export const getUserReservations = async (userId: string) => {
+  return prisma.reservation.findMany({
+    where: { userId },
+    include: {
+      drop: {
+        select: {
+          name: true,
+          price: true,
+        },
+      },
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+};

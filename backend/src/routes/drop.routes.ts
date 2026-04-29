@@ -1,11 +1,14 @@
 import { Router } from 'express';
 import * as dropController from '../controllers/drop.controller.js';
+import { protect, restrictTo } from '../utils/auth.middleware.js';
 
 const router = Router();
 
-router.post('/initialize', dropController.initializeDrop);
+router.post('/initialize', protect, restrictTo('ADMIN'), dropController.initializeDrop);
 router.get('/', dropController.getDashboardDrops);
-router.post('/reserve', dropController.reserveDrop);
-router.post('/purchase', dropController.purchaseDrop);
+router.post('/reserve', protect, dropController.reserveDrop);
+router.post('/purchase', protect, dropController.purchaseDrop);
+router.get('/my-reservations', protect, dropController.getMyReservations);
+router.get('/admin/reservations', protect, restrictTo('ADMIN'), dropController.getAdminReservations);
 
 export default router;

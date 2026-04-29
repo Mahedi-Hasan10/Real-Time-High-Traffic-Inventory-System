@@ -5,8 +5,11 @@ import api from '@/lib/api';
 import { Drop } from '@/types/index';
 import DropCard from '@/components/DropCard';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ShoppingBag, RefreshCw } from 'lucide-react';
+import { ShoppingBag, RefreshCw, LayoutDashboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/providers/auth-provider';
+import Link from 'next/link';
+import { LogOut, User as UserIcon } from 'lucide-react';
 
 export default function Dashboard() {
   const { data: response, isLoading, error, refetch } = useQuery({
@@ -17,16 +20,8 @@ export default function Dashboard() {
     },
   });
 
-  const { data: userData } = useQuery({
-    queryKey: ['user'],
-    queryFn: async () => {
-      const { data } = await api.get('/users');
-      return data.data[0]; // Just take the first user for demo
-    },
-  });
-
+  const { user, logout } = useAuth();
   const drops: Drop[] = response?.data || [];
-  const user = userData;
 
   return (
     <main className="min-h-screen bg-background">
@@ -39,10 +34,41 @@ export default function Dashboard() {
             </div>
             <h1 className="text-xl font-bold tracking-tight">SneakerDrop</h1>
           </div>
-          <Button variant="outline" size="sm" onClick={() => refetch()} className="gap-2">
-            <RefreshCw className="w-4 h-4" />
-            Sync
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button variant="outline" size="sm" onClick={() => refetch()} className="gap-2 hidden md:flex">
+              <RefreshCw className="w-4 h-4" />
+              Sync
+            </Button>
+            {user ? (
+              <div className="flex items-center gap-3">
+                <div className="hidden md:flex flex-col items-end">
+                  <span className="text-xs font-bold">{user.name}</span>
+                  <span className="text-[10px] text-muted-foreground uppercase">{user.role}</span>
+                </div>
+                <Link href="/dashboard">
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <LayoutDashboard className="w-4 h-4" />
+                    My Dashboard
+                  </Button>
+                </Link>
+                {user.role === 'ADMIN' && (
+                  <Link href="/admin">
+                    <Button variant="secondary" size="sm">Admin</Button>
+                  </Link>
+                )}
+                <Button variant="ghost" size="sm" onClick={logout}>
+                  <LogOut className="w-4 h-4" />
+                </Button>
+              </div>
+            ) : (
+              <Link href="/login">
+                <Button size="sm" className="gap-2">
+                  <UserIcon className="w-4 h-4" />
+                  Login
+                </Button>
+              </Link>
+            )}
+          </div>
         </div>
       </header>
 
@@ -78,7 +104,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {drops.length > 0 ? (
               drops.map((drop) => (
-                <DropCard key={drop.id} drop={drop} userId={user?.id} />
+                <DropCard key={drop.id} drop={drop} />
               ))
             ) : (
               <div className="col-span-full text-center py-20 bg-muted/20 rounded-2xl border-2 border-dashed">

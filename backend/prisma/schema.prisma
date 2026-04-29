@@ -14,10 +14,16 @@ model User {
   email        String        @unique
   name         String?
   password     String
+  role         Role          @default(USER)
   reservations Reservation[]
   purchases    Purchase[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
 }
 
 model Drop {

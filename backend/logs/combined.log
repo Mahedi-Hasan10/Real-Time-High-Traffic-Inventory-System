@@ -65,3 +65,69 @@
 2026-04-29 20:42:47 info: 	User connected: OnA9luuaZI7hMsDoAAAJ
 2026-04-29 20:42:47 info: 	[0mGET /api/v1/users [36m304[0m 295.778 ms - -[0m
 2026-04-29 20:42:48 info: 	[0mGET /api/v1/drops [32m200[0m 898.456 ms - -[0m
+2026-04-29 20:45:46 info: 	User disconnected: OnA9luuaZI7hMsDoAAAJ
+2026-04-29 20:45:47 info: 	User connected: BjOPZncwGRAQ-QabAAAL
+2026-04-29 20:45:47 info: 	[0mGET /api/v1/drops [36m304[0m 909.564 ms - -[0m
+2026-04-29 20:45:49 info: 	[0mGET /api/v1/users [36m304[0m 2954.597 ms - -[0m
+2026-04-29 20:50:32 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:51:09 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:51:09 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:51:11 info: 	User connected: 54MNhk0klimb1Ab6AAAB
+2026-04-29 20:51:13 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:51:14 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:51:14 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:51:19 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:51:19 info: 	💥 Process terminated!
+2026-04-29 20:51:20 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:51:20 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:51:23 info: 	User connected: NQdCAIVJN0uUuQafAAAB
+2026-04-29 20:51:26 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:51:27 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:51:27 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:51:33 info: 	User connected: KJgLm1r9SiDvSCjmAAAB
+2026-04-29 20:51:40 info: 	[0mGET /api/v1/users [36m304[0m 2616.522 ms - -[0m
+2026-04-29 20:51:41 info: 	[0mGET /api/v1/drops [36m304[0m 3620.017 ms - -[0m
+2026-04-29 20:52:05 info: 	User disconnected: KJgLm1r9SiDvSCjmAAAB
+2026-04-29 20:52:06 info: 	User connected: ApwWcFz3MSH33bGhAAAD
+2026-04-29 20:52:06 info: 	[0mGET /api/v1/drops [36m304[0m 869.630 ms - -[0m
+2026-04-29 20:52:08 info: 	[0mGET /api/v1/users [36m304[0m 2672.431 ms - -[0m
+2026-04-29 20:53:26 info: 	[0mGET /api/v1/drops [36m304[0m 929.565 ms - -[0m
+2026-04-29 20:54:54 info: 	User disconnected: ApwWcFz3MSH33bGhAAAD
+2026-04-29 20:54:54 info: 	User connected: oEnyd4GTVwtWBQA8AAAF
+2026-04-29 20:54:55 info: 	[0mGET /api/v1/drops [36m304[0m 1082.033 ms - -[0m
+2026-04-29 20:55:24 info: 	[0mPOST /api/v1/auth/register [32m201[0m 917.993 ms - 569[0m
+2026-04-29 20:55:27 info: 	[0mGET /api/v1/drops [36m304[0m 975.917 ms - -[0m
+2026-04-29 20:55:39 info: 	[0mPOST /api/v1/auth/login [32m200[0m 528.731 ms - 563[0m
+2026-04-29 20:56:04 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:56:05 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:56:05 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:56:10 info: 	User connected: 54sioukTQgoU-2O2AAAB
+2026-04-29 20:56:10 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:56:11 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:56:11 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:56:16 info: 	User connected: E_LqbR1pNxeyPJU8AAAB
+2026-04-29 20:56:17 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:56:17 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:56:17 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:56:23 info: 	User connected: EjzJIe7PiZ952D1NAAAB
+2026-04-29 20:57:12 info: 	[0mPOST /api/v1/auth/login [32m200[0m 4263.204 ms - 563[0m
+2026-04-29 20:57:13 info: 	[0mGET /api/v1/drops [36m304[0m 1054.315 ms - -[0m
+2026-04-29 20:57:22 info: 	User disconnected: EjzJIe7PiZ952D1NAAAB
+2026-04-29 20:57:22 info: 	User connected: erysvRS0SHoE0hMDAAAD
+2026-04-29 20:57:23 info: 	[0mGET /api/v1/drops [36m304[0m 937.718 ms - -[0m
+2026-04-29 20:57:25 info: 	[0mGET /api/v1/auth/me [32m200[0m 2858.997 ms - 336[0m
+2026-04-29 20:57:28 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 1173.252 ms - 92[0m
+2026-04-29 20:57:29 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 1067.510 ms - -[0m
+2026-04-29 20:57:33 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 1903.382 ms - 379[0m
+2026-04-29 20:57:44 info: 	User connected: ULJnLTTxZ1tLg3czAAAF
+2026-04-29 20:57:45 info: 	[0mGET /api/v1/drops [32m200[0m 935.295 ms - -[0m
+2026-04-29 20:58:08 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 877.890 ms - 423[0m
+2026-04-29 20:58:09 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 942.869 ms - -[0m
+2026-04-29 20:58:12 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 866.221 ms - -[0m
+2026-04-29 20:58:13 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 955.098 ms - -[0m
+2026-04-29 20:58:18 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 2046.101 ms - 379[0m
+2026-04-29 20:58:22 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 2926.131 ms - 309[0m
+2026-04-29 20:58:26 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 866.778 ms - 757[0m
+2026-04-29 20:58:27 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 1087.524 ms - -[0m
+2026-04-29 20:58:30 info: 	[0mGET /api/v1/drops [32m200[0m 987.109 ms - -[0m
+2026-04-29 20:58:39 info: 	Recovered 1 expired reservations
