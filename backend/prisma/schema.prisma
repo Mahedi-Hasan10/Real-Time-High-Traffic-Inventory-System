@@ -10,10 +10,67 @@ datasource db {
 }
 
 model User {
+  id           String        @id @default(uuid())
+  email        String        @unique
+  name         String?
+  password     String
+  reservations Reservation[]
+  purchases    Purchase[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Drop {
+  id             String        @id @default(uuid())
+  name           String
+  description    String?
+  price          Float
+  totalStock     Int
+  availableStock Int
+  startTime      DateTime
+  status         DropStatus    @default(ACTIVE)
+  reservations   Reservation[]
+  purchases      Purchase[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model Reservation {
+  id        String            @id @default(uuid())
+  userId    String
+  user      User              @relation(fields: [userId], references: [id])
+  dropId    String
+  drop      Drop              @relation(fields: [dropId], references: [id])
+  status    ReservationStatus @default(PENDING)
+  expiresAt DateTime
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  @@index([userId])
+  @@index([dropId])
+}
+
+model Purchase {
   id        String   @id @default(uuid())
-  email     String   @unique
-  name      String?
-  password  String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  dropId    String
+  drop      Drop     @relation(fields: [dropId], references: [id])
+  amount    Float
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([dropId])
+}
+
+enum DropStatus {
+  DRAFT
+  ACTIVE
+  COMPLETED
+}
+
+enum ReservationStatus {
+  PENDING
+  COMPLETED
+  EXPIRED
 }

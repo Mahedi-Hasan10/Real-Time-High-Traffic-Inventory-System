@@ -1,5 +1,5 @@
-import { Router } from 'express';
 import userRoutes from './user.routes.js';
+import dropRoutes from './drop.routes.js';
 
 const router = Router();
 
@@ -7,6 +7,10 @@ const defaultRoutes = [
   {
     path: '/users',
     route: userRoutes,
+  },
+  {
+    path: '/drops',
+    route: dropRoutes,
   },
 ];
 
