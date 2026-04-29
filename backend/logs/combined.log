@@ -12,3 +12,9 @@
 2026-04-29 20:17:32 info: 	💥 Process terminated!
 2026-04-29 20:17:33 info: 	Connected to PostgreSQL database via Prisma
 2026-04-29 20:17:33 info: 	Server is running on port 5002 in development mode
+2026-04-29 20:30:52 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:30:52 info: 	💥 Process terminated!
+2026-04-29 20:30:53 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:30:53 info: 	Server is running on port 5002 in development mode
+2026-04-29 20:32:24 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:32:24 info: 	Server is running on port 5001 in development mode

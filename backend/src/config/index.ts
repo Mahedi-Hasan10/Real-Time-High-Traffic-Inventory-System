@@ -10,7 +10,7 @@ dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 const envVarsSchema = z.object({
   NODE_ENV: z.enum(['production', 'development', 'test']),
-  PORT: z.string().default('5000'),
+  PORT: z.string().default('5001'),
   DATABASE_URL: z.string().describe('PostgreSQL connection string'),
   CORS_ORIGIN: z.string().default('*'),
 });
