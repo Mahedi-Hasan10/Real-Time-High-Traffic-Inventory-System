@@ -1,12 +1,12 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import api from '@/lib/api.js';
-import { Drop } from '@/types/index.js';
-import DropCard from '@/components/DropCard.js';
-import { Skeleton } from '@/components/ui/skeleton.js';
+import api from '@/lib/api';
+import { Drop } from '@/types/index';
+import DropCard from '@/components/DropCard';
+import { Skeleton } from '@/components/ui/skeleton';
 import { ShoppingBag, RefreshCw } from 'lucide-react';
-import { Button } from '@/components/ui/button.js';
+import { Button } from '@/components/ui/button';
 
 export default function Dashboard() {
   const { data: response, isLoading, error, refetch } = useQuery({
@@ -17,7 +17,16 @@ export default function Dashboard() {
     },
   });
 
+  const { data: userData } = useQuery({
+    queryKey: ['user'],
+    queryFn: async () => {
+      const { data } = await api.get('/users');
+      return data.data[0]; // Just take the first user for demo
+    },
+  });
+
   const drops: Drop[] = response?.data || [];
+  const user = userData;
 
   return (
     <main className="min-h-screen bg-background">
@@ -69,7 +78,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {drops.length > 0 ? (
               drops.map((drop) => (
-                <DropCard key={drop.id} drop={drop} />
+                <DropCard key={drop.id} drop={drop} userId={user?.id} />
               ))
             ) : (
               <div className="col-span-full text-center py-20 bg-muted/20 rounded-2xl border-2 border-dashed">

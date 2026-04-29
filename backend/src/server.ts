@@ -18,6 +18,20 @@ const startServer = async () => {
 
     server.listen(config.port, () => {
       logger.info(`Server is running on port ${config.port} in ${config.env} mode`);
+      
+      // Stock Recovery Mechanism (Feature 3)
+      // Check for expired reservations every 10 seconds
+      setInterval(async () => {
+        try {
+          const { recoverExpiredStock } = await import('./services/drop.service.js');
+          const recoveredCount = await recoverExpiredStock();
+          if (recoveredCount > 0) {
+            logger.info(`Recovered ${recoveredCount} expired reservations`);
+          }
+        } catch (error) {
+          logger.error('Error in stock recovery task:', error);
+        }
+      }, 10000);
     });
   } catch (error) {
     logger.error('Failed to start server:', error);

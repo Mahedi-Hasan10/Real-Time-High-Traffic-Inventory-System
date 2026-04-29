@@ -18,3 +18,50 @@
 2026-04-29 20:30:53 info: 	Server is running on port 5002 in development mode
 2026-04-29 20:32:24 info: 	Connected to PostgreSQL database via Prisma
 2026-04-29 20:32:24 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:33:32 info: 	User connected: agBiLgNf3PWB_q6uAAAB
+2026-04-29 20:33:36 info: 	[0mGET /api/v1/drops [32m200[0m 4474.024 ms - 91[0m
+2026-04-29 20:33:52 info: 	[0mGET /api/v1/drops [36m304[0m 3374.829 ms - -[0m
+2026-04-29 20:35:29 info: 	User disconnected: agBiLgNf3PWB_q6uAAAB
+2026-04-29 20:35:29 info: 	User connected: n_LuTUHx6C4lsfsGAAAD
+2026-04-29 20:35:32 info: 	[0mGET /api/v1/drops [36m304[0m 3464.034 ms - -[0m
+2026-04-29 20:35:40 info: 	[0mGET /api/v1/drops [36m304[0m 948.236 ms - -[0m
+2026-04-29 20:38:16 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:38:16 info: 	💥 Process terminated!
+2026-04-29 20:38:16 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:38:16 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:38:16 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:38:22 info: 	User connected: 7Md5yRUbXFDHOZC6AAAB
+2026-04-29 20:38:29 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:38:29 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:38:29 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:38:34 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:38:34 info: 	💥 Process terminated!
+2026-04-29 20:38:35 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:38:35 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:38:35 info: 	User connected: UCJeT88Bp6XKeQEUAAAB
+2026-04-29 20:39:00 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-04-29 20:39:01 info: 	Connected to PostgreSQL database via Prisma
+2026-04-29 20:39:01 info: 	Server is running on port 5001 in development mode
+2026-04-29 20:39:07 info: 	User connected: IHEpgyk6LjPgLOn-AAAB
+2026-04-29 20:40:45 info: 	[0mGET /api/v1/drops [32m200[0m 911.959 ms - -[0m
+2026-04-29 20:40:47 info: 	[0mGET /api/v1/users [32m200[0m 3056.585 ms - 171[0m
+2026-04-29 20:41:14 info: 	User disconnected: IHEpgyk6LjPgLOn-AAAB
+2026-04-29 20:41:15 info: 	User connected: zzobgEa4iW7Ko2DmAAAD
+2026-04-29 20:41:15 info: 	[0mGET /api/v1/drops [36m304[0m 997.249 ms - -[0m
+2026-04-29 20:41:17 info: 	[0mGET /api/v1/users [36m304[0m 2636.236 ms - -[0m
+2026-04-29 20:42:05 info: 	User disconnected: zzobgEa4iW7Ko2DmAAAD
+2026-04-29 20:42:05 info: 	User connected: MHdhs7ahRjhYSoP9AAAF
+2026-04-29 20:42:05 info: 	[0mGET /api/v1/users [36m304[0m 292.598 ms - -[0m
+2026-04-29 20:42:08 info: 	[0mGET /api/v1/drops [36m304[0m 3605.972 ms - -[0m
+2026-04-29 20:42:11 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 1600.084 ms - 379[0m
+2026-04-29 20:42:25 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 2464.024 ms - 305[0m
+2026-04-29 20:42:31 info: 	User disconnected: MHdhs7ahRjhYSoP9AAAF
+2026-04-29 20:42:32 info: 	User connected: k5NFn2SqEaDYgFr6AAAH
+2026-04-29 20:42:33 info: 	[0mGET /api/v1/drops [32m200[0m 1193.129 ms - -[0m
+2026-04-29 20:42:34 info: 	[0mGET /api/v1/users [36m304[0m 2622.208 ms - -[0m
+2026-04-29 20:42:39 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 1948.335 ms - 379[0m
+2026-04-29 20:42:43 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 2694.889 ms - 305[0m
+2026-04-29 20:42:47 info: 	User disconnected: k5NFn2SqEaDYgFr6AAAH
+2026-04-29 20:42:47 info: 	User connected: OnA9luuaZI7hMsDoAAAJ
+2026-04-29 20:42:47 info: 	[0mGET /api/v1/users [36m304[0m 295.778 ms - -[0m
+2026-04-29 20:42:48 info: 	[0mGET /api/v1/drops [32m200[0m 898.456 ms - -[0m
