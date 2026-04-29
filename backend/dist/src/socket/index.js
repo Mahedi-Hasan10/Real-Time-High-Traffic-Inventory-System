@@ -1,7 +1,8 @@
 import { Server as SocketServer } from 'socket.io';
 import logger from '../utils/logger.js';
+export let io;
 export const setupSocket = (server) => {
-    const io = new SocketServer(server, {
+    io = new SocketServer(server, {
         cors: {
             origin: '*', // In production, replace with actual origin
             methods: ['GET', 'POST'],

@@ -24,16 +24,14 @@ const startServer = async () => {
 startServer();
 // Handle unhandled rejections
 process.on('unhandledRejection', (err) => {
-    logger.error('UNHANDLED REJECTION! 💥 Shutting down...');
-    logger.error(err.name, err.message);
+    logger.error('UNHANDLED REJECTION! 💥 Shutting down...', err);
     server.close(() => {
         process.exit(1);
     });
 });
 // Handle uncaught exceptions
 process.on('uncaughtException', (err) => {
-    logger.error('UNCAUGHT EXCEPTION! 💥 Shutting down...');
-    logger.error(err.name, err.message);
+    logger.error('UNCAUGHT EXCEPTION! 💥 Shutting down...', err);
     process.exit(1);
 });
 // Handle SIGTERM
