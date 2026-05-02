@@ -56,11 +56,9 @@ export const getAllDrops = async () => {
  */
 export const reserveItem = async (dropId: string, userId: string) => {
   const reservation = await prisma.$transaction(async (tx) => {
-    // 1. Get drop and check stock (using update to lock the row if needed, 
-    // but Prisma's transaction with availableStock check is sufficient here)
-    const drop = await tx.drop.findUnique({
-      where: { id: dropId },
-    });
+    // 1. Get drop and check stock with a row-level lock
+    const drops = await tx.$queryRaw<any[]>`SELECT * FROM "Drop" WHERE id = ${dropId} FOR UPDATE`;
+    const drop = drops[0];
 
     if (!drop || drop.availableStock <= 0) {
       throw new ApiError(400, 'Item is sold out or unavailable');
@@ -161,11 +159,13 @@ export const recoverExpiredStock = async () => {
   for (const res of expiredReservations) {
     try {
       await prisma.$transaction(async (tx) => {
-        // Update reservation status
-        await tx.reservation.update({
-          where: { id: res.id },
+        // Update reservation status only if it is still PENDING
+        const updateResult = await tx.reservation.updateMany({
+          where: { id: res.id, status: 'PENDING' },
           data: { status: 'EXPIRED' },
         });
+
+        if (updateResult.count === 0) return; // Already recovered by another process
 
         // Increment stock
         const updatedDrop = await tx.drop.update({

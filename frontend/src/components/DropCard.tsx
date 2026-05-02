@@ -39,6 +39,22 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
         toast.info(`New purchase: ${data.userName}`, {
           icon: <ShoppingBag className="w-3.5 h-3.5 text-primary" />,
         });
+        
+        // Add new purchase to the list
+        setDrop((prev) => ({
+          ...prev,
+          purchases: [
+            {
+              id: Math.random().toString(), // Temporary ID for UI
+              userId: '',
+              dropId: data.dropId,
+              amount: prev.price,
+              createdAt: new Date().toISOString(),
+              user: { name: data.userName }
+            },
+            ...(prev.purchases || [])
+          ].slice(0, 3) // Keep only top 3
+        }));
       }
     };
 
@@ -174,20 +190,46 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
           </div>
         </div>
 
-        {/* Community Proof */}
-        <div className="flex items-center justify-between pt-0.5">
-           <div className="flex items-center gap-1.5">
-              <div className="flex -space-x-1.5">
-                {[1, 2].map((i) => (
-                  <div key={i} className="h-5 w-5 rounded-full border border-background bg-muted flex items-center justify-center">
-                    <Users className="w-2 h-2 text-muted-foreground" />
+        {/* Community Proof & Activity Feed */}
+        <div className="space-y-3 pt-0.5">
+          <div className="flex items-center justify-between">
+             <div className="flex items-center gap-1.5">
+                <div className="flex -space-x-1.5">
+                  {(drop.purchases?.length || 0) > 0 ? (
+                    drop.purchases?.slice(0, 3).map((p, i) => (
+                      <div key={p.id} className="h-5 w-5 rounded-full border border-background bg-primary/10 flex items-center justify-center text-[8px] font-bold text-primary">
+                        {p.user.name.charAt(0).toUpperCase()}
+                      </div>
+                    ))
+                  ) : (
+                    [1, 2].map((i) => (
+                      <div key={i} className="h-5 w-5 rounded-full border border-background bg-muted flex items-center justify-center">
+                        <Users className="w-2 h-2 text-muted-foreground" />
+                      </div>
+                    ))
+                  )}
+                </div>
+                <span className="text-[9px] font-semibold text-muted-foreground">
+                  {drop.purchases?.length || 0} secured
+                </span>
+             </div>
+          </div>
+
+          {/* Activity Feed (Top 3 Purchasers) */}
+          {drop.purchases && drop.purchases.length > 0 && (
+            <div className="bg-muted/30 rounded-lg p-2 space-y-1.5">
+              <p className="text-[8px] font-bold text-muted-foreground uppercase tracking-widest px-1">Recent Buyers</p>
+              <div className="space-y-1">
+                {drop.purchases.slice(0, 3).map((p) => (
+                  <div key={p.id} className="flex items-center gap-2 px-1 animate-in slide-in-from-left-1 duration-300">
+                    <div className="w-1 h-1 rounded-full bg-primary/40" />
+                    <span className="text-[10px] font-medium text-foreground/80">{p.user.name}</span>
+                    <span className="text-[8px] text-muted-foreground ml-auto">just now</span>
                   </div>
                 ))}
               </div>
-              <span className="text-[9px] font-semibold text-muted-foreground">
-                {drop.purchases?.length || 0}+ secured
-              </span>
-           </div>
+            </div>
+          )}
         </div>
       </CardContent>
 
