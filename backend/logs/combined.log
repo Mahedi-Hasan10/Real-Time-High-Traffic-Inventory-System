@@ -273,3 +273,4 @@
 2026-05-03 23:17:49 info: 	[0mPOST /api/v1/auth/login [33m401[0m 667.856 ms - 224[0m
 2026-05-03 23:18:06 info: 	[0mPOST /api/v1/auth/login [32m200[0m 645.360 ms - 555[0m
 2026-05-03 23:18:09 info: 	[0mGET /api/v1/drops/admin/reservations [32m200[0m 3831.670 ms - -[0m
+2026-05-03 23:58:55 info: 	User disconnected: HNHnhKRBYrIbabHXAAAf
