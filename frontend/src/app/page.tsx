@@ -174,12 +174,12 @@ export default function Dashboard() {
         </div>
 
         {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
             {[1, 2, 3].map((i) => (
               <div key={i} className="space-y-3">
-                <Skeleton className="h-[240px] w-full rounded-2xl" />
+                <Skeleton className="h-[140px] w-full rounded-2xl" />
                 <div className="space-y-2">
-                  <Skeleton className="h-5 w-3/4" />
+                  <Skeleton className="h-4 w-3/4" />
                   <Skeleton className="h-3 w-1/2" />
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function Dashboard() {
             </Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
             {drops.length > 0 ? (
               drops.map((drop) => (
                 <DropCard key={drop.id} drop={drop} />

@@ -123,9 +123,9 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
   const isLowStock = drop.availableStock < 10 && drop.availableStock > 0;
 
   return (
-    <Card className="group relative overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-md">
+    <Card className="group relative overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-md flex flex-col h-full">
       {/* Visual Area */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-muted/40">
+      <div className="relative h-32 overflow-hidden bg-muted/40 shrink-0">
         <div className="absolute inset-0 bg-gradient-to-t from-background/10 to-transparent z-10" />
         <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity">
           <Zap className="w-16 h-16 text-primary scale-90 group-hover:scale-100 transition-transform duration-500" />
@@ -162,9 +162,9 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
         )}
       </div>
 
-      <CardContent className="p-4 space-y-4">
+      <CardContent className="p-3 space-y-3 flex-1 flex flex-col justify-between">
         <div className="space-y-1">
-          <h3 className="text-base font-bold tracking-tight text-foreground/90 group-hover:text-primary transition-colors line-clamp-1">
+          <h3 className="text-sm font-bold tracking-tight text-foreground/90 group-hover:text-primary transition-colors line-clamp-1">
             {drop.name}
           </h3>
           <p className="text-[11px] text-muted-foreground leading-snug line-clamp-2">
@@ -191,7 +191,7 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
         </div>
 
         {/* Community Proof & Activity Feed */}
-        <div className="space-y-3 pt-0.5">
+        <div className="space-y-2 pt-1 mt-auto">
           <div className="flex items-center justify-between">
              <div className="flex items-center gap-1.5">
                 <div className="flex -space-x-1.5">
@@ -217,9 +217,9 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
 
           {/* Activity Feed (Top 3 Purchasers) */}
           {drop.purchases && drop.purchases.length > 0 && (
-            <div className="bg-muted/30 rounded-lg p-2 space-y-1.5">
+            <div className="bg-muted/30 rounded-lg p-1.5 space-y-1">
               <p className="text-[8px] font-bold text-muted-foreground uppercase tracking-widest px-1">Recent Buyers</p>
-              <div className="space-y-1">
+              <div className="space-y-0.5">
                 {drop.purchases.slice(0, 3).map((p) => (
                   <div key={p.id} className="flex items-center gap-2 px-1 animate-in slide-in-from-left-1 duration-300">
                     <div className="w-1 h-1 rounded-full bg-primary/40" />
@@ -233,7 +233,7 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-3 pt-0">
         {!reservation && (
           user ? (
             <Button 
@@ -244,7 +244,7 @@ export default function DropCard({ drop: initialDrop }: DropCardProps) {
               {drop.availableStock <= 0 ? 'Sold Out' : isReserving ? '...' : 'Reserve Spot'}
             </Button>
           ) : (
-            <Link href="/login" className="w-full">
+            <Link href="/login" className="w-full mt-4">
               <Button 
                 className="w-full rounded-lg h-9 font-bold transition-all uppercase text-[9px] group/btn" 
                 variant="outline"

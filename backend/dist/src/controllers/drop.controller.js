@@ -15,3 +15,34 @@ export const getDashboardDrops = asyncHandler(async (req, res) => {
     const drops = await dropService.getAllDrops();
     res.status(200).json(new ApiResponse(200, drops, 'Dashboard data fetched successfully'));
 });
+/**
+ * @description Reserve a drop
+ */
+export const reserveDrop = asyncHandler(async (req, res) => {
+    const { dropId, userId } = req.body;
+    const reservation = await dropService.reserveItem(dropId, userId);
+    res.status(200).json(new ApiResponse(200, reservation, 'Item reserved successfully. You have 60 seconds.'));
+});
+/**
+ * @description Complete purchase
+ */
+export const purchaseDrop = asyncHandler(async (req, res) => {
+    const { reservationId, userId } = req.body;
+    const purchase = await dropService.completePurchase(reservationId, userId);
+    res.status(200).json(new ApiResponse(200, purchase, 'Purchase completed successfully'));
+});
+/**
+ * @description Get all reservations for admin
+ */
+export const getAdminReservations = asyncHandler(async (req, res) => {
+    const reservations = await dropService.getReservations();
+    res.status(200).json(new ApiResponse(200, reservations, 'Reservations fetched successfully'));
+});
+/**
+ * @description Get my reservations
+ */
+export const getMyReservations = asyncHandler(async (req, res) => {
+    const userId = req.user.id;
+    const reservations = await dropService.getUserReservations(userId);
+    res.status(200).json(new ApiResponse(200, reservations, 'My reservations fetched successfully'));
+});

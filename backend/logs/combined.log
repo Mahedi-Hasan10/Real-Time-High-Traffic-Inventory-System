@@ -157,3 +157,119 @@
 2026-04-30 00:16:22 info: 	[0mGET /api/v1/drops [36m304[0m 939.033 ms - -[0m
 2026-04-30 00:32:10 info: 	User disconnected: -1D99zejguZFSWJ2AAAJ
 2026-04-30 00:32:11 info: 	User connected: cLZCXt9XRasxzDJ2AAAL
+2026-05-03 22:23:08 info: 	Connected to PostgreSQL database via Prisma
+2026-05-03 22:23:08 info: 	Server is running on port 5001 in development mode
+2026-05-03 22:29:59 info: 	Connected to PostgreSQL database via Prisma
+2026-05-03 22:29:59 info: 	Server is running on port 5001 in development mode
+2026-05-03 22:46:41 info: 	Connected to PostgreSQL database via Prisma
+2026-05-03 22:46:41 info: 	Server is running on port 5001 in development mode
+2026-05-03 22:46:52 info: 	User connected: WL9_EvJeIQw5-C7XAAAB
+2026-05-03 22:46:55 info: 	[0mGET /api/v1/auth/me [36m304[0m 3173.276 ms - -[0m
+2026-05-03 22:46:55 info: 	[0mGET /api/v1/drops [36m304[0m 3723.197 ms - -[0m
+2026-05-03 22:48:32 info: 	User connected: gBVwaMHLZR8FzNPvAAAD
+2026-05-03 22:48:33 info: 	[0mGET /api/v1/drops [32m200[0m 929.213 ms - -[0m
+2026-05-03 22:49:00 warn: 	401 - Incorrect email or password - /api/v1/auth/login - POST - ::1
+2026-05-03 22:49:00 info: 	[0mPOST /api/v1/auth/login [33m401[0m 437.579 ms - 308[0m
+2026-05-03 22:49:27 info: 	[0mPOST /api/v1/auth/register [32m201[0m 1007.011 ms - 561[0m
+2026-05-03 22:49:46 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 1825.200 ms - 379[0m
+2026-05-03 22:49:55 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 2331.725 ms - 379[0m
+2026-05-03 22:50:16 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 3334.907 ms - 309[0m
+2026-05-03 22:50:25 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 3186.389 ms - 305[0m
+2026-05-03 22:50:28 info: 	User disconnected: WL9_EvJeIQw5-C7XAAAB
+2026-05-03 22:50:28 info: 	User connected: phUk7j1CNJjHFVWdAAAF
+2026-05-03 22:50:29 info: 	[0mGET /api/v1/drops [32m200[0m 961.010 ms - -[0m
+2026-05-03 22:50:31 info: 	[0mGET /api/v1/auth/me [36m304[0m 2646.541 ms - -[0m
+2026-05-03 22:50:32 info: 	User disconnected: gBVwaMHLZR8FzNPvAAAD
+2026-05-03 22:50:32 info: 	User connected: EdUxMhkeKNFrdkNqAAAH
+2026-05-03 22:50:32 info: 	[0mGET /api/v1/auth/me [32m200[0m 296.676 ms - 328[0m
+2026-05-03 22:50:33 info: 	[0mGET /api/v1/drops [32m200[0m 993.252 ms - -[0m
+2026-05-03 22:51:15 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 1148.115 ms - -[0m
+2026-05-03 22:51:16 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 1128.115 ms - -[0m
+2026-05-03 22:51:26 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 2547.345 ms - 379[0m
+2026-05-03 22:51:36 info: 	User disconnected: phUk7j1CNJjHFVWdAAAF
+2026-05-03 22:51:36 info: 	User connected: VLEqhZDXMuMuEavNAAAJ
+2026-05-03 22:51:37 info: 	[0mGET /api/v1/drops [32m200[0m 869.054 ms - -[0m
+2026-05-03 22:51:39 info: 	[0mGET /api/v1/auth/me [36m304[0m 2712.633 ms - -[0m
+2026-05-03 22:51:45 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 2193.143 ms - 379[0m
+2026-05-03 22:51:54 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 3265.347 ms - 309[0m
+2026-05-03 22:52:32 info: 	Recovered 1 expired reservations
+2026-05-03 22:52:37 info: 	User disconnected: VLEqhZDXMuMuEavNAAAJ
+2026-05-03 22:52:37 info: 	User connected: ayrQIBzbV55J-Y3kAAAL
+2026-05-03 22:52:38 info: 	[0mGET /api/v1/drops [32m200[0m 913.843 ms - -[0m
+2026-05-03 22:52:40 info: 	[0mGET /api/v1/auth/me [36m304[0m 2835.349 ms - -[0m
+2026-05-03 22:52:43 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 919.652 ms - -[0m
+2026-05-03 22:52:44 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 1147.205 ms - -[0m
+2026-05-03 22:53:37 info: 	User disconnected: EdUxMhkeKNFrdkNqAAAH
+2026-05-03 22:53:37 info: 	User connected: VbAN4mXLR78KxbIfAAAN
+2026-05-03 22:53:39 info: 	[0mGET /api/v1/drops [32m200[0m 989.372 ms - -[0m
+2026-05-03 22:55:18 info: 	User disconnected: ayrQIBzbV55J-Y3kAAAL
+2026-05-03 22:55:19 info: 	User connected: kaGKWgHzmkVuHMTyAAAP
+2026-05-03 22:55:22 info: 	User disconnected: kaGKWgHzmkVuHMTyAAAP
+2026-05-03 22:55:22 info: 	User connected: o0dELLpW4q3l7jzZAAAR
+2026-05-03 22:55:23 info: 	[0mGET /api/v1/drops [36m304[0m 916.271 ms - -[0m
+2026-05-03 22:55:37 info: 	[0mGET /api/v1/drops [36m304[0m 915.914 ms - -[0m
+2026-05-03 22:55:50 info: 	User disconnected: VbAN4mXLR78KxbIfAAAN
+2026-05-03 22:55:50 info: 	User connected: bHnyYnsJq5qhrb_6AAAT
+2026-05-03 22:55:50 info: 	User disconnected: o0dELLpW4q3l7jzZAAAR
+2026-05-03 22:55:51 info: 	User connected: tTyO49lLt0zn8J_rAAAV
+2026-05-03 22:55:51 info: 	[0mGET /api/v1/drops [36m304[0m 1047.466 ms - -[0m
+2026-05-03 22:55:54 info: 	[0mGET /api/v1/drops [36m304[0m 3627.661 ms - -[0m
+2026-05-03 22:58:38 info: 	[0mGET /api/v1/drops [36m304[0m 984.455 ms - -[0m
+2026-05-03 23:00:02 info: 	User disconnected: bHnyYnsJq5qhrb_6AAAT
+2026-05-03 23:00:12 info: 	User connected: N0kTpz8xIUhSuBeeAAAX
+2026-05-03 23:00:14 info: 	[0mGET /api/v1/drops [36m304[0m 1222.353 ms - -[0m
+2026-05-03 23:00:46 warn: 	401 - Incorrect email or password - /api/v1/auth/login - POST - ::1
+2026-05-03 23:00:46 info: 	[0mPOST /api/v1/auth/login [33m401[0m 288.414 ms - 308[0m
+2026-05-03 23:01:13 warn: 	400 - User already exists - /api/v1/auth/register - POST - ::1
+2026-05-03 23:01:13 info: 	[0mPOST /api/v1/auth/register [33m400[0m 290.232 ms - 292[0m
+2026-05-03 23:01:24 info: 	[0mPOST /api/v1/auth/login [32m200[0m 530.939 ms - 563[0m
+2026-05-03 23:01:25 info: 	[0mGET /api/v1/drops [36m304[0m 961.654 ms - -[0m
+2026-05-03 23:01:51 info: 	[0mPOST /api/v1/auth/login [32m200[0m 668.509 ms - 555[0m
+2026-05-03 23:01:54 info: 	[0mGET /api/v1/drops [36m304[0m 3506.084 ms - -[0m
+2026-05-03 23:02:00 info: 	User disconnected: N0kTpz8xIUhSuBeeAAAX
+2026-05-03 23:02:00 info: 	User connected: oAmWgmmB4xBZOZEFAAAZ
+2026-05-03 23:02:05 info: 	[0mGET /api/v1/drops [36m304[0m 1161.199 ms - -[0m
+2026-05-03 23:02:27 info: 	[0mPOST /api/v1/auth/login [32m200[0m 524.446 ms - 563[0m
+2026-05-03 23:02:28 info: 	[0mGET /api/v1/drops [36m304[0m 1132.427 ms - -[0m
+2026-05-03 23:02:38 info: 	[0mPOST /api/v1/auth/login [32m200[0m 649.571 ms - 555[0m
+2026-05-03 23:02:50 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 2045.399 ms - 379[0m
+2026-05-03 23:03:02 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 1885.782 ms - 379[0m
+2026-05-03 23:03:11 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 3381.024 ms - 305[0m
+2026-05-03 23:03:19 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 3674.138 ms - 309[0m
+2026-05-03 23:03:25 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 1053.465 ms - 759[0m
+2026-05-03 23:03:30 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 936.106 ms - -[0m
+2026-05-03 23:03:31 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 964.065 ms - -[0m
+2026-05-03 23:03:35 info: 	[0mGET /api/v1/drops [32m200[0m 934.213 ms - -[0m
+2026-05-03 23:03:41 info: 	User disconnected: tTyO49lLt0zn8J_rAAAV
+2026-05-03 23:03:41 info: 	User connected: Jf_b0SCC7vezD0oDAAAb
+2026-05-03 23:03:42 info: 	[0mGET /api/v1/drops [36m304[0m 932.512 ms - -[0m
+2026-05-03 23:08:04 warn: 	401 - Incorrect email or password - /api/v1/auth/login - POST - ::1
+2026-05-03 23:08:04 info: 	[0mPOST /api/v1/auth/login [33m401[0m 386.216 ms - 308[0m
+2026-05-03 23:08:07 warn: 	401 - Incorrect email or password - /api/v1/auth/login - POST - ::1
+2026-05-03 23:08:07 info: 	[0mPOST /api/v1/auth/login [33m401[0m 302.005 ms - 308[0m
+2026-05-03 23:08:28 info: 	[0mPOST /api/v1/auth/register [32m201[0m 1001.363 ms - 561[0m
+2026-05-03 23:08:42 info: 	[0mPOST /api/v1/auth/login [32m200[0m 607.872 ms - 555[0m
+2026-05-03 23:08:47 info: 	[0mGET /api/v1/drops/admin/reservations [32m200[0m 3875.699 ms - -[0m
+2026-05-03 23:09:06 info: 	[0mGET /api/v1/drops/admin/reservations [36m304[0m 3757.559 ms - -[0m
+2026-05-03 23:09:24 info: 	User connected: uohFtvAIG0OoLuyWAAAd
+2026-05-03 23:09:24 info: 	User disconnected: oAmWgmmB4xBZOZEFAAAZ
+2026-05-03 23:09:25 info: 	[0mGET /api/v1/drops [32m200[0m 1187.574 ms - -[0m
+2026-05-03 23:15:15 info: 	User disconnected: uohFtvAIG0OoLuyWAAAd
+2026-05-03 23:15:20 info: 	User connected: HNHnhKRBYrIbabHXAAAf
+2026-05-03 23:15:59 info: 	[0mPOST /api/v1/auth/login [32m200[0m 665.262 ms - 563[0m
+2026-05-03 23:16:00 info: 	[0mGET /api/v1/drops [36m304[0m 922.393 ms - -[0m
+2026-05-03 23:16:15 info: 	[0mPOST /api/v1/auth/login [32m200[0m 707.709 ms - 555[0m
+2026-05-03 23:16:17 info: 	[0mGET /api/v1/drops [36m304[0m 1306.104 ms - -[0m
+2026-05-03 23:16:23 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 1953.466 ms - 379[0m
+2026-05-03 23:16:36 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 2602.283 ms - 305[0m
+2026-05-03 23:16:50 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 1993.453 ms - 379[0m
+2026-05-03 23:16:57 info: 	[0mPOST /api/v1/drops/reserve [32m200[0m 2063.799 ms - 379[0m
+2026-05-03 23:17:10 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 3156.882 ms - 309[0m
+2026-05-03 23:17:16 info: 	[0mPOST /api/v1/drops/purchase [32m200[0m 2828.237 ms - 305[0m
+2026-05-03 23:17:23 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 934.543 ms - -[0m
+2026-05-03 23:17:24 info: 	[0mGET /api/v1/drops/my-reservations [36m304[0m 1121.089 ms - -[0m
+2026-05-03 23:17:28 info: 	[0mGET /api/v1/drops/my-reservations [32m200[0m 3857.873 ms - -[0m
+2026-05-03 23:17:49 warn: 	401 - Incorrect email or password - /api/v1/auth/login - POST - ::1
+2026-05-03 23:17:49 info: 	[0mPOST /api/v1/auth/login [33m401[0m 667.856 ms - 224[0m
+2026-05-03 23:18:06 info: 	[0mPOST /api/v1/auth/login [32m200[0m 645.360 ms - 555[0m
+2026-05-03 23:18:09 info: 	[0mGET /api/v1/drops/admin/reservations [32m200[0m 3831.670 ms - -[0m

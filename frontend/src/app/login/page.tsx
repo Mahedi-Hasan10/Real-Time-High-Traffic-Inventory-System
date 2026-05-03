@@ -82,7 +82,7 @@ export default function AuthPage() {
                     onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 mb-4">
                   <Label htmlFor="password">Password</Label>
                   <Input 
                     id="password" 
@@ -133,7 +133,7 @@ export default function AuthPage() {
                     onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 mb-4">
                   <Label htmlFor="reg-password">Password</Label>
                   <Input 
                     id="reg-password" 
