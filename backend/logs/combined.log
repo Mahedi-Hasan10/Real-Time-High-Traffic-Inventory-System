@@ -274,3 +274,7 @@
 2026-05-03 23:18:06 info: 	[0mPOST /api/v1/auth/login [32m200[0m 645.360 ms - 555[0m
 2026-05-03 23:18:09 info: 	[0mGET /api/v1/drops/admin/reservations [32m200[0m 3831.670 ms - -[0m
 2026-05-03 23:58:55 info: 	User disconnected: HNHnhKRBYrIbabHXAAAf
+2026-05-04 00:10:26 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-05-04 00:10:32 info: 	Connected to PostgreSQL database via Prisma
+2026-05-04 00:10:32 info: 	Server is running on port 5001 in development mode
+2026-05-04 00:10:32 info: 	User connected: NJjZw6lxNKPbFn9_AAAB

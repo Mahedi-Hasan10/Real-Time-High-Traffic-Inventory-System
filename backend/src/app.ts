@@ -14,7 +14,7 @@ import routes from './routes/index.js';
 const app: Express = express();
 
 // Security HTTP headers
-app.use(helmet());
+app.use((helmet as any)());
 
 // Parse json request body
 app.use(express.json({ limit: '16kb' }));
