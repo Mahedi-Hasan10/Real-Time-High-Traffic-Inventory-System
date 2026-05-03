@@ -278,3 +278,7 @@
 2026-05-04 00:10:32 info: 	Connected to PostgreSQL database via Prisma
 2026-05-04 00:10:32 info: 	Server is running on port 5001 in development mode
 2026-05-04 00:10:32 info: 	User connected: NJjZw6lxNKPbFn9_AAAB
+2026-05-04 00:12:26 info: 	👋 SIGTERM RECEIVED. Shutting down gracefully
+2026-05-04 00:12:32 info: 	Connected to PostgreSQL database via Prisma
+2026-05-04 00:12:32 info: 	Server is running on port 5001 in development mode
+2026-05-04 00:12:33 info: 	User connected: M-yJ7bzF9B-isNdrAAAB

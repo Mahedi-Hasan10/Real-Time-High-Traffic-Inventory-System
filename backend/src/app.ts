@@ -1,6 +1,6 @@
 import express, { Express } from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
+import helmetPkg from 'helmet';
 import compression from 'compression';
 import morgan from 'morgan';
 import { config } from './config/index.js';
@@ -14,7 +14,8 @@ import routes from './routes/index.js';
 const app: Express = express();
 
 // Security HTTP headers
-app.use((helmet as any)());
+const helmet: any = helmetPkg;
+app.use(helmet());
 
 // Parse json request body
 app.use(express.json({ limit: '16kb' }));
