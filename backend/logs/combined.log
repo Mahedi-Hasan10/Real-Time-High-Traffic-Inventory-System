@@ -282,3 +282,16 @@
 2026-05-04 00:12:32 info: 	Connected to PostgreSQL database via Prisma
 2026-05-04 00:12:32 info: 	Server is running on port 5001 in development mode
 2026-05-04 00:12:33 info: 	User connected: M-yJ7bzF9B-isNdrAAAB
+2026-05-04 00:23:30 info: 	User disconnected: M-yJ7bzF9B-isNdrAAAB
+2026-05-04 00:23:32 info: 	User connected: XawLdiBSCFCJ3VA5AAAD
+2026-05-04 00:40:23 error: Error: Connection terminated unexpectedly
+    at /Users/mahedi/Desktop/MERN/techzo/backend/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PrismaPgAdapter.performIO (file:///Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/adapter-pg/dist/index.mjs:618:22)
+    at async PrismaPgAdapter.queryRaw (file:///Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/adapter-pg/dist/index.mjs:568:30)
+    at async o (/Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/client-engine-runtime/src/tracing.ts:66:26)
+    at async e.interpretNode (/Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:186:26)
+    at async e.interpretNode (/Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:272:41)
+    at async e.run (/Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/client-engine-runtime/src/interpreter/query-interpreter.ts:94:23)
+    at async e.execute (/Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/client/src/runtime/core/engines/client/LocalExecutor.ts:81:12)
+    at async jt.request (/Users/mahedi/Desktop/MERN/techzo/backend/node_modules/@prisma/client/src/runtime/core/engines/client/ClientEngine.ts:504:22)
